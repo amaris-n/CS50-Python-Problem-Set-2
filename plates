@@ -1,0 +1,25 @@
+plate = input().strip()
+valid = True
+
+if len(plate) < 2 or len(plate) > 6:
+    valid = False
+
+if not (len(plate) >= 2 and plate[0].isalpha() and plate[1].isalpha()):
+    valid = False
+
+number_started = False
+for ch in plate:
+    if ch.isalpha():
+        if number_started:
+            valid = False
+    elif ch.isdigit():
+        if not number_started and ch == "0":
+            valid = False
+        number_started = True
+    else:
+        valid = False
+
+if valid:
+    print("Valid")
+else:
+    print("Invalid")

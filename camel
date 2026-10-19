@@ -1,0 +1,9 @@
+s = input().strip()
+if s == "":
+    print(0)
+else:
+    count = 1
+    for ch in s:
+        if ch.isupper():
+            count += 1
+    print(count)
